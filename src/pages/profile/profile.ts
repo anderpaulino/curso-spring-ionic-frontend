@@ -33,8 +33,14 @@ export class ProfilePage {
         this.cliente = response;
         this.getImageIfExist();
       },
-    error => {});
-    }
+    error => {
+      if(error.status == 403){
+        this.navCtrl.setRoot('HomePage');
+      }
+    });
+  }else{
+    this.navCtrl.setRoot('HomePage');
+  }
 
     console.log('ionViewDidLoad ProfilePage');
   }
