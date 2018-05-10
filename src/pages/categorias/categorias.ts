@@ -21,7 +21,7 @@ export class CategoriasPage {
   items: CategoriaDTO[];
 
   bucketUrl: string = API_CONFIG.bucketBaseUrl;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public categoriaService: CategoriaService) {
   }
@@ -31,9 +31,7 @@ export class CategoriasPage {
       .subscribe(response => {
         this.items = response;
       },
-      error => {
-        console.log(error);
-      });
+      error => {});
 
   }
 
